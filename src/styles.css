@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(to bottom, #6e529d 0%, #ac7b7b 100%);
+}
+.App {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: cornflowerblue;
+}
+h2 {
+  text-align: center;
+  color: rgb(6, 96, 148);
+}
+h4 {
+  display: inline;
+}
+.movieContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px ridge rebeccapurple;
+  margin: 20px;
+  padding: 20px;
+  background-color: rgb(243, 235, 236);
+  border-radius: 1em;
+  color: rgb(6, 96, 148);
+}
+
+button {
+  margin: 10px;
+  padding: 10px;
+  background-color: #ff8d19;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  /* outline: none; */
+}
+button:hover {
+  cursor: pointer;
+  background-color: #ffa346;
+}
+button:active {
+  outline: none;
+}
+
+.heart {
+  fill: white;
+  width: 50px;
+  position: absolute;
+  animation: pulse 2s ease-out 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    fill: red;
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+

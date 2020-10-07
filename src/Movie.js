@@ -1,5 +1,13 @@
 import React, { useState } from "react";
 
+/*
+*Component to render a particular movie item
+* liked - a state to store whether liked or not.
+* watchlisted - a state to store whether watchlisted or not.
+* @props: item - store  amovie object 
+          id(number) - store id of a particular movie object
+          onDelete - a parent function to delete items.
+*/
 const Movie = (props) => {
   
   const [liked, setLike] = useState(false);
@@ -7,11 +15,15 @@ const Movie = (props) => {
   const movie = props.item;
   const onDelete = props.onDelete;
   const id = props.id;
-  const onWatchlist = () => {
+
+  /*handles watchlist button click*/ 
+  const handleWatchlistCLick = () => {
     const watchState = !watchlisted;
     setWatchlist(watchState);
   };
-  const onLike = () => {
+
+  /*handles like button click*/ 
+  const handleLikeCLick = () => {
     const likeState = !liked;
     setLike(likeState);
   };
@@ -41,8 +53,8 @@ const Movie = (props) => {
           <span>{movie.actors.join(" , ")}</span>
         </div>
         <div>
-          <button onClick={onLike}>Like</button>
-          <button style={ watchlisted ? { color:'white', backgroundColor: 'red'} : {}} onClick={onWatchlist}>
+          <button onClick={handleLikeCLick}>Like</button>
+          <button style={ watchlisted ? { color:'white', backgroundColor: 'red'} : {}} onClick={handleWatchlistCLick}>
           {watchlisted ? "Watchlisted" : "Watchlist"}
           </button>
           <button onClick = {()=> onDelete(id)}>Delete</button>
